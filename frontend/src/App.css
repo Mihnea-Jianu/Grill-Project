@@ -1,3 +1,19 @@
+@font-face {
+    font-family: MontserratAlternates;
+    src: url('../public/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Enriqueta;
+    src: url('../public/Enriqueta/Enriqueta-Regular.ttf');
+}
+
+@font-face {
+    font-family: FasterOne;
+    src: url('../public/Faster_One/FasterOne-Regular.ttf');
+}
+
+
 .App {
     display: flex;
     flex-direction: column;
@@ -6,6 +22,55 @@
 .App .BackgroundImage {
     width: 96%;
     height: 840px;
+
+    margin-top: 64px;
+    align-self: center;
+}
+
+.App .Name {
+    position: absolute;
+    width: 717px;
+    height: 315px;
+
+    margin-top: 320px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 100%;
+}
+
+.App .Name .PimpYour {
+    font-family: Enriqueta;
+}
+
+.App .Name .Grill {
+    color: #721D08;
+    font-family: FasterOne;
+}
+
+.App .HomeText {
+    color:white;
+    background-color: #721D08;
+    width: 100%;
+    height: 180px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: MontserratAlternates;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+}
+
+.App .PeterImage {
+    width: 88%;
+    height: 576;
 
     margin-top: 64px;
     align-self: center;

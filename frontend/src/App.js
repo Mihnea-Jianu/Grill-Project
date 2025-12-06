@@ -13,6 +13,14 @@ function App() {
         <div className = "App">
             <Navbar loginState = { loginState } currentPage = { currentPage } setCurrentPage = { setCurrentPage }/>
             <img src = "background.png" alt = "bg" className = "BackgroundImage" />
+            <div className = "Name">
+                <div className = "PimpYour"> Pimp Your </div>
+                <div className = "Grill"> Grill </div>
+            </div>
+            <div className = "HomeText">
+                Înregistrează-te pentru a intra și tu în cea mai mare rețea de grătaragii din lume!
+            </div>
+            <img src = "peter.png" alt = "pt" className = "PeterImage" />
             <Footer />
         </div>
     );

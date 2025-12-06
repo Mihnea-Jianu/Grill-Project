@@ -1,6 +1,6 @@
 @font-face {
     font-family: MontserratAlternates;
-    src: url('Montserrat_Alternates/MontserratAlternates-SemiBold.ttf');
+    src: url('../public/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf');
 }
 
 .Navbar a {
@@ -50,22 +50,11 @@
     height: 55.96px;
 }
 
-/* .BestGrills {
+.BestGrills {
     width: 132px;
     height: 29px;
 
     margin-top: 35px;
-} */
-
-#BestGrills {
-    width: 132px;
-    height: 29px;
-
-    margin-top: 35px;
-}
-
-.LoggedIn {
-    display: none;
 }
 
 .Login {

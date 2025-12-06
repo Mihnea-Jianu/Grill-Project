@@ -50,11 +50,19 @@
     height: 55.96px;
 }
 
+.Profil {
+    width: 75px;
+    height: 29px;
+
+    margin-top: 35px;
+}
+
 .BestGrills {
     width: 132px;
     height: 29px;
 
     margin-top: 35px;
+    margin-left: 38px;
 }
 
 .Login {
@@ -67,6 +75,15 @@
 
 .Register {
     width: 106px;
+    height: 29px;
+
+    margin-top: 35px;
+    margin-left: 38px;
+    margin-right: 38px;
+}
+
+.Logout {
+    width: 89px;
     height: 29px;
 
     margin-top: 35px;

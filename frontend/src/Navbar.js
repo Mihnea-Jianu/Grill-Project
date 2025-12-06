@@ -2,32 +2,33 @@ import { useState } from 'react';
 import './Navbar.css';
 
 function Navbar() {
-    const links = ["/", "/", "/", "/"];
-
-    const [loggedIn, setLoggedIn] = useState(true);
-
-    setLoggedIn(false);
-
     const noneIf = (a) => {
         if(a) return "none";
+        else return "";
     };
+
+    const [loggedIn, setLoggedIn] = useState(true);
+    const [buttons, setButtons] = useState([
+        {className: "HomePage",   address: "/", text: "Pimp Your Grill", display: "none",            id: 0},
+        {className: "Profil",     address: "/", text: "Profil",          display: noneIf(!loggedIn), id: 1},
+        {className: "BestGrills", address: "/", text: "Best Grills",     display: "",                id: 2},
+        {className: "Login",      address: "/", text: "Login",           display: noneIf(loggedIn),  id: 3},
+        {className: "Register",   address: "/", text: "Register",        display: noneIf(loggedIn),  id: 4},
+        {className: "Logout",     address: "/", text: "Logout",          display: noneIf(!loggedIn), id: 5},
+    ]);
 
     return (
         <nav className = "Navbar">
-            <a href = {links[0]} className = "HomePage">
-                <div className = "HomePageText"> Pimp Your Grill </div>
+            <a href = { buttons[0].address } className = { buttons[0].className }>
+                <div className = "HomePageText"> { buttons[0].text } </div>
                 <img src = "logo.png" alt = "logo" className="HomePageLogo"/>
             </a>
 
-            <a href = {links[1]} className = "BestGrills"> Best Grills </a>
-
-            <a href = {links[2]} className = "Login" style = {{
-                display: noneIf(loggedIn)
-            }}> Login </a>
-
-            <a href = {links[3]} className = "Register" style = {{
-                display: noneIf(loggedIn)
-            }}> Register </a>
+            {buttons.map((button) => (
+                <a href = { button.address } className = { button.className } style = {{ display: button.display }}> 
+                    { button.text } 
+                </a>
+            ))}     
         </nav>
     );
 }

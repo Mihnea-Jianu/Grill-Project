@@ -10,7 +10,7 @@ function Navbar() {
     const [loggedIn, setLoggedIn] = useState(true);
     const [buttons, setButtons] = useState([
         {className: "HomePage",   address: "/", text: "Pimp Your Grill", display: "none",            id: 0},
-        {className: "Profil",     address: "/", text: "Profil",          display: noneIf(!loggedIn), id: 1},
+        {className: "Profile",    address: "/", text: "Profil",          display: noneIf(!loggedIn), id: 1},
         {className: "BestGrills", address: "/", text: "Best Grills",     display: "",                id: 2},
         {className: "Login",      address: "/", text: "Login",           display: noneIf(loggedIn),  id: 3},
         {className: "Register",   address: "/", text: "Register",        display: noneIf(loggedIn),  id: 4},

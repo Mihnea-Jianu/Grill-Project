@@ -3,13 +3,14 @@
     src: url('../public/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf');
 }
 
-.Navbar a {
+.Navbar div {
     color: white;
     text-decoration: none;
     font-family: MontserratAlternates;
     font-size: 24px;
     font-weight: 600;
     line-height: 100%;
+    cursor: pointer;
 }
 
 .Navbar {
@@ -25,7 +26,7 @@
     background-color: #721D08;
 }
 
-.HomePage {
+.Navbar .HomePage {
     width: 305px;
     height: 56px;
 
@@ -35,7 +36,7 @@
     display: inline-flex;
 }
 
-.HomePageText {
+.Navbar .HomePageText {
     width: 254px;
     height: 38px;
 
@@ -45,12 +46,12 @@
     font-weight: 700;
 }
 
-.HomePageLogo {
+.Navbar .HomePageLogo {
     width: 50.51px;
     height: 55.96px;
 }
 
-.Profile {
+.Navbar .Profile {
     width: 75px;
     height: 29px;
 
@@ -58,7 +59,7 @@
     margin-top: 25px;
 }
 
-.BestGrills {
+.Navbar .BestGrills {
     width: 132px;
     height: 29px;
 
@@ -67,7 +68,7 @@
     margin-left: 38px;
 }
 
-.Login {
+.Navbar .Login {
     width: 70px;
     height: 29px;
 
@@ -76,7 +77,7 @@
     margin-left: 38px;
 }
 
-.Register {
+.Navbar .Register {
     width: 106px;
     height: 29px;
 
@@ -86,7 +87,7 @@
     margin-right: 38px;
 }
 
-.Logout {
+.Navbar .Logout {
     width: 89px;
     height: 29px;
 

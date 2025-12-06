@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Navbar.css';
 
-function Navbar({ loginState, currentPage }) {
+function Navbar({ loginState, currentPage, setCurrentPage }) {
     const none = (state) => {
         if(state) return "none";
         else      return "";
@@ -9,6 +9,11 @@ function Navbar({ loginState, currentPage }) {
 
     const solid = (state) => {
         if(state) return "solid";
+        else      return "";
+    };
+
+    const width = (state) => {
+        if(state) return "2px";
         else      return "";
     };
 
@@ -28,7 +33,7 @@ function Navbar({ loginState, currentPage }) {
             display: "",
             padding: padding(button.address === currentPage),
             border: solid(button.address === currentPage),
-            borderWidth: "2px",
+            borderWidth: width(button.address === currentPage),
             borderRadius: "4px"
         };
 
@@ -54,17 +59,19 @@ function Navbar({ loginState, currentPage }) {
         buttons[i].style = style(buttons[i]);
     }
 
+    console.log(setButtons);
+
     return (
         <nav className = "Navbar">
-            <a href = { buttons[0].address } className = { buttons[0].className }>
+            <div onClick = { () => setCurrentPage(buttons[0].address) } className = { buttons[0].className }>
                 <div className = "HomePageText"> { buttons[0].text } </div>
                 <img src = "logo.png" alt = "logo" className = "HomePageLogo"/>
-            </a>
+            </div>
 
             {buttons.map((button) => (
-                <a href = { button.address } className = { button.className } style = { button.style }> 
+                <div onClick = { () => setCurrentPage(button.address) } className = { button.className } style = { button.style }> 
                     { button.text } 
-                </a>
+                </div>
             ))}     
         </nav>
     );

@@ -2,3 +2,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.App .BackgroundImage {
+    width: 96%;
+    height: 840px;
+
+    margin-top: 64px;
+    align-self: center;
+}

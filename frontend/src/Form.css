@@ -1,9 +1,6 @@
-@font-face {
-    font-family: MontserratAlternates;
-    src: url('../public/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf');
-}
-
 .Form {
+    width: 703px;
+
     color: white;
     background-color: #721D08;
 
@@ -17,7 +14,7 @@
     flex-direction: column;
     align-items: center;
 
-    font-family: MontserratAlternates;
+    font-family: Montserrat;
     font-weight: 700;
     font-size: 36px;
     line-height: 100%;
@@ -27,17 +24,53 @@
     width: 340px;
     height: 98px;
 
-    margin-top: 57px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 
     align-content: center;
     text-align: center;
+}
+
+.Form .Field {
+    width: 515px;
+    height: 10%;
+
+    font-weight: 500;
+    font-size: 16px;
+
+    display: inline-flex;
+    align-items: last baseline;
+
+    border: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+}
+
+.Form .Field .FieldImage {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Form .Field .FieldImage img {
+    height: 50%;
+}
+
+.Form .Field .FieldText {
+    margin-left: 10px;
+    cursor: text;
 }
 
 .Form .SubmitButton {
     width: 344px;
     height: 74px;
 
-    margin-top: 300px;
+    margin-top: 70px;
 
     background-color: #009C41;
     border-radius: 15px;
@@ -48,23 +81,20 @@
 }
 
 .Form .ForgotPasswordButton {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 18px;
     text-decoration: underline;
     cursor: pointer;
 }
 
 .Form .SignUpOffer {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 18px;
+    display: inline-flex;
 }
 
 .Form .SignUpButton {
     color: #4469ff;
     text-decoration: underline;
     cursor: pointer;
-}
-
-.Form .SignUpOffer {
-    display: inline-flex;
 }

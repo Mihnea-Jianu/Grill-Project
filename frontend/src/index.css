@@ -1,3 +1,23 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('../public/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: MontserratAlternates;
+    src: url('../public/Montserrat_Alternates/MontserratAlternates-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Enriqueta;
+    src: url('../public/Enriqueta/Enriqueta-Regular.ttf');
+}
+
+@font-face {
+    font-family: FasterOne;
+    src: url('../public/Faster_One/FasterOne-Regular.ttf');
+}
+
 * {
     margin: 0px;
     padding: 0px;

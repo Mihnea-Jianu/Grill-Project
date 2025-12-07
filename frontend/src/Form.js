@@ -1,23 +1,90 @@
 import './Form.css';
 
 function Form({ currentPage, setCurrentPage, setLoginState }) {
-    if(currentPage === "/login") {
-        return (
-            <div className = "Form" style = {{ height: "703px", width: "703px" }}>
-                <div className = "Title"> Bine ai revenit mare grătaragiu! </div>
-                <div className = "Fields">
+    let form = {
+        style: {},
+            titleText: "",
+            fields: [],
+            submitButtonText: "",
+            forgotPasswordButton: {
+                text: "",
+                style: { display: "" }
+            },
+            signUpOffer: {
+                text1: "",
+                text2: "",
+                text3: "",
+                style: { display: "" }
+            }
+    };
 
-                </div>
-                <div className = "SubmitButton"> Login </div>
-                <div className = "ForgotPasswordButton"> Forgot Password </div>
-                <div className = "SignUpOffer">
-                    <div className = "SignUpText"> No account? Press here to&nbsp; </div>
-                    <div className = "SignUpButton"> sign up </div>
-                    <div className = "SignUpText"> . </div>
-                </div>
-            </div>
-        );
+    if(currentPage === "/login") {
+        form = {
+            style: { height: "703px" },
+            titleText: "Bine ai revenit mare grătaragiu!",
+            fields: [
+                { imageSrc: "mail.png", imageAlt: "mail", text: "E-mail"   },
+                { imageSrc: "lock.png", imageAlt: "lock", text: "Password" },
+            ],
+            submitButtonText: "Log in",
+            forgotPasswordButton: {
+                text: "Forgot Password",
+                style: { display: "" }
+            },
+            signUpOffer: {
+                text1: "No account? Press here to",
+                text2: "sign up",
+                text3: ".",
+                style: { display: "" }
+            }
+        };
+    } else if(currentPage === "/login") {
+        form = {
+            style: { height: "783px" },
+            titleText: "Gata să devii șef pe grătare?",
+            fields: [
+                { imageSrc: "person.png", imageAlt: "pers", text: "Full Name",        },
+                { imageSrc: "phone.png",  imageAlt: "tlfn", text: "Telephone",        },
+                { imageSrc: "mail.png",   imageAlt: "mail", text: "E-mail",           },
+                { imageSrc: "lock.png",   imageAlt: "lock", text: "Password",         },
+                { imageSrc: "lock.png",   imageAlt: "lock", text: "Confirm Password", },
+            ],
+            submitButtonText: "Sign up",
+            forgotPasswordButton: {
+                text: "",
+                style: { display: "none" }
+            },
+            signUpOffer: {
+                text1: "",
+                text2: "",
+                text3: "",
+                style: { display: "none" }
+            }
+        };
     }
+
+    return (
+        <div className = "Form" style = { form.style }>
+            <div className = "Title"> { form.titleText } </div>
+
+            {form.fields.map((field) => (
+                <div className = "Field">
+                    <div className = "FieldImage"> <img src = { field.imageSrc } alt = { field.imageAlt }/> </div>
+                    <div className = "FieldText"> { field.text }</div>
+                </div>
+            ))}
+
+            <div className = "SubmitButton"> { form.submitButtonText } </div>
+            <div className = "ForgotPasswordButton" style = { form.forgotPasswordButton.style }> 
+                { form.forgotPasswordButton.text } 
+            </div>
+            <div className = "SignUpOffer" style = { form.signUpOffer.style }>
+                <div className = "SignUpText"  > { form.signUpOffer.text1 } &nbsp; </div>
+                <div className = "SignUpButton"> { form.signUpOffer.text2 }        </div>
+                <div className = "SignUpText"  > { form.signUpOffer.text3 }        </div>
+            </div>
+        </div>
+    );
 }
 
 export default Form;

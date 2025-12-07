@@ -1,7 +1,12 @@
 import './Footer.css';
 
 function Footer() {
-    const links = ["https://instagram.com", "https://facebook.com", "https://youtube.com", "https://twitch.com"];
+    const links = [
+        "https://www.instagram.com/lsacbucuresti/", 
+        "https://www.facebook.com/LsacBucuresti",
+        "https://www.youtube.com/@LSACBucuresti", 
+        "https://www.twitch.tv/lsac_bucuresti"
+    ];
 
     return (
         <div className = "Footer">

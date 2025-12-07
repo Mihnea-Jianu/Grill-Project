@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './Home.css';
 
 function Home({ loginState, currentPage }) {

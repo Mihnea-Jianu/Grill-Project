@@ -39,8 +39,14 @@ function Navbar({ loginState, currentPage, setCurrentPage }) {
 
         if(button.id === 1 || button.id === 5) {
             style.display = none(!loginState);
-        } else {
+        } else if(button.id !== 2) {
             style.display = none(loginState);
+        }
+
+        if(button.id === 3 && currentPage === "/reset-password") {
+            style.padding = padding(true);
+            style.border = solid(true);
+            style.borderWidth = width(true);
         }
 
         return style;

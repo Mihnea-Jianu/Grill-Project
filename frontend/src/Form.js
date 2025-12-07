@@ -3,19 +3,19 @@ import './Form.css';
 function Form({ currentPage, setCurrentPage, setLoginState }) {
     let form = {
         style: {},
-            titleText: "",
-            fields: [],
-            submitButtonText: "",
-            forgotPasswordButton: {
-                text: "",
-                style: { display: "" }
-            },
-            signUpOffer: {
-                text1: "",
-                text2: "",
-                text3: "",
-                style: { display: "" }
-            }
+        titleText: "",
+        fields: [],
+        submitButtonText: "",
+        forgotPasswordButton: {
+            text: "",
+            style: {}
+        },
+        signUpOffer: {
+            text1: "",
+            text2: "",
+            text3: "",
+            style: {}
+        }
     };
 
     if(currentPage === "/login") {
@@ -29,16 +29,16 @@ function Form({ currentPage, setCurrentPage, setLoginState }) {
             submitButtonText: "Log in",
             forgotPasswordButton: {
                 text: "Forgot Password",
-                style: { display: "" }
+                style: {}
             },
             signUpOffer: {
                 text1: "No account? Press here to",
                 text2: "sign up",
                 text3: ".",
-                style: { display: "" }
+                style: {}
             }
         };
-    } else if(currentPage === "/login") {
+    } else if(currentPage === "/register") {
         form = {
             style: { height: "783px" },
             titleText: "Gata să devii șef pe grătare?",
@@ -50,6 +50,25 @@ function Form({ currentPage, setCurrentPage, setLoginState }) {
                 { imageSrc: "lock.png",   imageAlt: "lock", text: "Confirm Password", },
             ],
             submitButtonText: "Sign up",
+            forgotPasswordButton: {
+                text: "",
+                style: { display: "none" }
+            },
+            signUpOffer: {
+                text1: "",
+                text2: "",
+                text3: "",
+                style: { display: "none" }
+            }
+        };
+    } else if(currentPage === "/reset-password") {
+        form = {
+            style: { height: "534px" },
+            titleText: "Forgot Password",
+            fields: [
+                { imageSrc: "mail.png",   imageAlt: "mail", text: "E-mail",           },
+            ],
+            submitButtonText: "Send",
             forgotPasswordButton: {
                 text: "",
                 style: { display: "none" }
@@ -74,14 +93,18 @@ function Form({ currentPage, setCurrentPage, setLoginState }) {
                 </div>
             ))}
 
-            <div className = "SubmitButton"> { form.submitButtonText } </div>
-            <div className = "ForgotPasswordButton" style = { form.forgotPasswordButton.style }> 
+            <div className = "SubmitButton" onClick = { () => { setLoginState(true); setCurrentPage("/home"); } }> 
+                { form.submitButtonText } 
+            </div>
+            <div className = "ForgotPasswordButton" onClick = { () => setCurrentPage("/reset-password") } style = { form.forgotPasswordButton.style }> 
                 { form.forgotPasswordButton.text } 
             </div>
             <div className = "SignUpOffer" style = { form.signUpOffer.style }>
-                <div className = "SignUpText"  > { form.signUpOffer.text1 } &nbsp; </div>
-                <div className = "SignUpButton"> { form.signUpOffer.text2 }        </div>
-                <div className = "SignUpText"  > { form.signUpOffer.text3 }        </div>
+                <div className = "SignUpText"> { form.signUpOffer.text1 } &nbsp; </div>
+                <div className = "SignUpButton" onClick = { () => setCurrentPage("/register") }> 
+                    { form.signUpOffer.text2 }
+                </div>
+                <div className = "SignUpText"> { form.signUpOffer.text3 } </div>
             </div>
         </div>
     );

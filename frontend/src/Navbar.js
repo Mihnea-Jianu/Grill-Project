@@ -47,12 +47,12 @@ function Navbar({ loginState, currentPage, setCurrentPage }) {
     };
 
     const [buttons, setButtons] = useState([
-        {className: "HomePage",   address: "/home",        text: "Pimp Your Grill", style: {}, id: 0},
-        {className: "Profile",    address: "/profile",     text: "Profil",          style: {}, id: 1},
-        {className: "BestGrills", address: "/best-grills", text: "Best Grills",     style: {}, id: 2},
-        {className: "Login",      address: "/login",       text: "Login",           style: {}, id: 3},
-        {className: "Register",   address: "/register",    text: "Register",        style: {}, id: 4},
-        {className: "Logout",     address: "/logout",      text: "Logout",          style: {}, id: 5},
+        {className: "HomeButton",       address: "/home",        text: "Pimp Your Grill", style: {}, id: 0},
+        {className: "ProfileButton",    address: "/profile",     text: "Profil",          style: {}, id: 1},
+        {className: "BestGrillsButton", address: "/best-grills", text: "Best Grills",     style: {}, id: 2},
+        {className: "LoginButton",      address: "/login",       text: "Login",           style: {}, id: 3},
+        {className: "RegisterButton",   address: "/register",    text: "Register",        style: {}, id: 4},
+        {className: "LogoutButton",     address: "/logout",      text: "Logout",          style: {}, id: 5},
     ]);
 
     for(let i = 0; i < buttons.length; i++) {
@@ -64,8 +64,8 @@ function Navbar({ loginState, currentPage, setCurrentPage }) {
     return (
         <nav className = "Navbar">
             <div onClick = { () => setCurrentPage(buttons[0].address) } className = { buttons[0].className }>
-                <div className = "HomePageText"> { buttons[0].text } </div>
-                <img src = "logo.png" alt = "logo" className = "HomePageLogo"/>
+                <div className = "HomeButtonText"> { buttons[0].text } </div>
+                <img src = "logo.png" alt = "logo" className = "HomeButtonLogo"/>
             </div>
 
             {buttons.map((button) => (

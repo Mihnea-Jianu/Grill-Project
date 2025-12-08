@@ -2,9 +2,12 @@ import './Form.css';
 
 function Form({ currentPage, setCurrentPage, setLoginState }) {
     const handleSubmit = () => {
-        if(currentPage === "/login" || currentPage === "/register") {
+        if(currentPage === "/login") {
             setLoginState(true); setCurrentPage("/home");
+        } else if(currentPage === "/register") {
+            setCurrentPage("/login");
         }
+
     };
 
     let form = {

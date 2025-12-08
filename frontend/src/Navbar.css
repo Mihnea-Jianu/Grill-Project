@@ -32,6 +32,10 @@
     display: inline-flex;
 }
 
+.Navbar .HomeButton:hover{
+    filter: brightness(90%);
+}
+
 .Navbar .HomeButtonText {
     width: 254px;
     height: 38px;
@@ -55,6 +59,10 @@
     margin-top: 25px;
 }
 
+.Navbar .ProfileButton:hover{
+    filter: brightness(90%);
+}
+
 .Navbar .BestGrillsButton {
     width: 132px;
     height: 29px;
@@ -64,6 +72,10 @@
     margin-left: 38px;
 }
 
+.Navbar .BestGrillsButton:hover{
+    filter: brightness(90%);
+}
+
 .Navbar .LoginButton {
     width: 70px;
     height: 29px;
@@ -71,6 +83,10 @@
     padding: 10px;
     margin-top: 25px;
     margin-left: 38px;
+}
+
+.Navbar .LoginButton:hover{
+    filter: brightness(90%);
 }
 
 .Navbar .RegisterButton {
@@ -83,6 +99,10 @@
     margin-right: 38px;
 }
 
+.Navbar .RegisterButton:hover{
+    filter: brightness(90%);
+}
+
 .Navbar .LogoutButton {
     width: 89px;
     height: 29px;
@@ -91,4 +111,8 @@
     margin-top: 25px;
     margin-left: 38px;
     margin-right: 38px;
+}
+
+.Navbar .LogoutButton:hover{
+    filter: brightness(90%);
 }

@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import './Navbar.css';
 
-function Navbar({ loginState, currentPage, setCurrentPage }) {
+function Navbar({ loginState, setLoginState, currentPage, setCurrentPage }) {
+    const handleClick = (button) => {
+        if(button.id === 5) {
+            setLoginState(false); setCurrentPage("/home");
+        } else {
+            setCurrentPage(button.address);
+        }
+    };
+
     const none = (state) => {
         if(state) return "none";
         else      return "";
@@ -58,7 +66,7 @@ function Navbar({ loginState, currentPage, setCurrentPage }) {
         {className: "BestGrillsButton", address: "/best-grills", text: "Best Grills",     style: {}, id: 2},
         {className: "LoginButton",      address: "/login",       text: "Login",           style: {}, id: 3},
         {className: "RegisterButton",   address: "/register",    text: "Register",        style: {}, id: 4},
-        {className: "LogoutButton",     address: "/logout",      text: "Logout",          style: {}, id: 5},
+        {className: "LogoutButton",     address: "",             text: "Logout",          style: {}, id: 5},
     ]);
 
     for(let i = 0; i < buttons.length; i++) {
@@ -75,7 +83,7 @@ function Navbar({ loginState, currentPage, setCurrentPage }) {
             </div>
 
             {buttons.map((button) => (
-                <div onClick = { () => setCurrentPage(button.address) } className = { button.className } style = { button.style }> 
+                <div onClick = { () => handleClick(button) } className = { button.className } style = { button.style }> 
                     { button.text } 
                 </div>
             ))}     

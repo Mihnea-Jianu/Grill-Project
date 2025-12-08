@@ -1,6 +1,12 @@
 import './Form.css';
 
 function Form({ currentPage, setCurrentPage, setLoginState }) {
+    const handleSubmit = () => {
+        if(currentPage === "/login" || currentPage === "/register") {
+            setLoginState(true); setCurrentPage("/home");
+        }
+    };
+
     let form = {
         style: {},
         titleText: "",
@@ -66,9 +72,29 @@ function Form({ currentPage, setCurrentPage, setLoginState }) {
             style: { height: "534px" },
             titleText: "Forgot Password",
             fields: [
-                { imageSrc: "mail.png",   imageAlt: "mail", text: "E-mail",           },
+                { imageSrc: "mail.png",   imageAlt: "mail", text: "E-mail" },
             ],
             submitButtonText: "Send",
+            forgotPasswordButton: {
+                text: "",
+                style: { display: "none" }
+            },
+            signUpOffer: {
+                text1: "",
+                text2: "",
+                text3: "",
+                style: { display: "none" }
+            }
+        };
+    } else if(currentPage === "/post-grill") {
+        form = {
+            style: { width: "650px", height: "609px" },
+            titleText: "Create a post",
+            fields: [
+                { imageSrc: "",   imageAlt: "", text: "Grill Name"  },
+                { imageSrc: "",   imageAlt: "", text: "Description" },
+            ],
+            submitButtonText: "Post this grill!",
             forgotPasswordButton: {
                 text: "",
                 style: { display: "none" }
@@ -88,12 +114,12 @@ function Form({ currentPage, setCurrentPage, setLoginState }) {
 
             {form.fields.map((field) => (
                 <div className = "Field">
-                    <div className = "FieldImage"> <img src = { field.imageSrc } alt = { field.imageAlt }/> </div>
-                    <div className = "FieldText"> { field.text }</div>
+                    { field.imageSrc !== "" && <div className = "FieldImage"> <img src = { field.imageSrc } alt = { field.imageAlt }/> </div>}
+                    <div className = "FieldText"> { field.text } </div>
                 </div>
             ))}
 
-            <div className = "SubmitButton" onClick = { () => { setLoginState(true); setCurrentPage("/home"); } }> 
+            <div className = "SubmitButton" onClick = { () => handleSubmit() }> 
                 { form.submitButtonText } 
             </div>
             <div className = "ForgotPasswordButton" onClick = { () => setCurrentPage("/reset-password") } style = { form.forgotPasswordButton.style }> 

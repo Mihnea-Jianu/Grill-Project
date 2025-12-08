@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import PostGrill from './PostGrill';
 import Register from './Register';
+import Profile from './Profile';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Reset from './Reset';
@@ -13,11 +15,13 @@ function App() {
 
     return (
         <div className = "App">
-            <Navbar loginState = { loginState } currentPage = { currentPage } setCurrentPage = { setCurrentPage }/>
+            <Navbar loginState = { loginState } setLoginState = { setLoginState } currentPage = { currentPage } setCurrentPage = { setCurrentPage }/>
             <Home loginState = { loginState } currentPage = { currentPage }/>
             <Login currentPage = { currentPage } setCurrentPage = { setCurrentPage } setLoginState = { setLoginState }/>
             <Register currentPage = { currentPage } setCurrentPage = { setCurrentPage } setLoginState = { setLoginState }/>
             <Reset currentPage = { currentPage } setCurrentPage = { setCurrentPage } setLoginState = { setLoginState }/>
+            <Profile currentPage = { currentPage } setCurrentPage = { setCurrentPage }/>
+            <PostGrill currentPage = { currentPage } setCurrentPage = { setCurrentPage } setLoginState = { setLoginState }/>
             <Footer /> 
         </div>
     );

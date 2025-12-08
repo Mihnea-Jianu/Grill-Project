@@ -46,6 +46,12 @@
     border-left-width: 0px;
     border-right-width: 0px;
     border-bottom-width: 1px;
+
+    cursor: text;
+}
+
+.Form .Field:hover{
+    filter: brightness(80%);
 }
 
 .Form .Field .FieldImage {
@@ -63,7 +69,6 @@
 
 .Form .Field .FieldText {
     margin-left: 10px;
-    cursor: text;
 }
 
 .Form .SubmitButton {
@@ -81,11 +86,29 @@
     cursor: pointer;
 }
 
+.Form .SubmitButton:hover{
+    filter: brightness(90%);
+}
+
+.Form .SubmitButton:active{
+    transition: filter 0.01s;
+    filter: brightness(80%);
+}
+
 .Form .ForgotPasswordButton {
     margin-top: 30px;
     font-size: 18px;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.Form .ForgotPasswordButton:hover{
+    filter: brightness(90%);
+}
+
+.Form .ForgotPasswordButton:active{
+    transition: filter 0.01s;
+    filter: brightness(80%);
 }
 
 .Form .SignUpOffer {
@@ -98,4 +121,13 @@
     color: #4469ff;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.Form .SignUpButton:hover{
+    filter: brightness(90%);
+}
+
+.Form .SignUpButton:active{
+    transition: filter 0.01s;
+    filter: brightness(80%);
 }

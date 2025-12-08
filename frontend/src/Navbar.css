@@ -36,6 +36,10 @@
     filter: brightness(90%);
 }
 
+.Navbar .HomeButton:active{
+    filter: brightness(80%);
+}
+
 .Navbar .HomeButtonText {
     width: 254px;
     height: 38px;

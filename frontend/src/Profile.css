@@ -15,6 +15,7 @@
 
     margin-top: 71px;
     margin-bottom: 71px;
+    z-index: -2;
 }
 
 .Profile .Info {
@@ -80,4 +81,26 @@
 .Profile .PostGrillButton:active{
     transition: filter 0.01s;
     filter: brightness(80%);
+}
+
+.Profile .MyGrills {
+    width: 1387px;
+    height: 360px;
+    
+    position: absolute;
+    margin-top: 600px;
+    margin-bottom: 50px;
+
+    border-radius: 38px;
+    background-color: #903019;
+    z-index: -1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Profile .MyGrills .MyGrillsText {
+    margin-top: 50px;
+    font-weight: 700;
 }

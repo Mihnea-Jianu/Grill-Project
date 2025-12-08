@@ -21,6 +21,9 @@ function Profile({ currentPage, setCurrentPage }) {
             <div className = "PostGrillButton" onClick = { () => setCurrentPage("/post-grill") }>
                 Post a grill
             </div>
+            <div className = "MyGrills">
+                <div className = "MyGrillsText"> My Grills </div>
+            </div>
         </div>
     );
 }
